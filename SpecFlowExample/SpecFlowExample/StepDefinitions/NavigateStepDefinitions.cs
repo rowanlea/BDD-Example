@@ -33,6 +33,8 @@ namespace SpecFlowExample.StepDefinitions
         {
             await _page
                 .GetByRole(AriaRole.Listitem)
+                .Filter(new() { HasText = "Insights" })
+                .GetByRole(AriaRole.Link)
                 .Filter(new() { HasText = mouseClickTargetText })
                 .ClickAsync();
         }
